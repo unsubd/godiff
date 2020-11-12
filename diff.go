@@ -4,7 +4,7 @@ func Diff(first []byte, second []byte) map[int]bool {
 	indices := make(map[int]bool)
 	small := len(first)
 
-	if small < len(second) {
+	if small > len(second) {
 		small = len(second)
 	}
 
