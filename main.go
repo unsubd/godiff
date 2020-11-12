@@ -1,9 +1,22 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("HelloWorld!")
+	second := []byte("HELLOKORLD")
+	first := []byte("HELLOWORLD")
+	indices := Diff(first, second)
+	secondStr := ""
+
+	for i := 0; i < len(first) && i < len(second); i++ {
+		ok := indices[i]
+		if ok {
+			secondStr += Color(string(second[i]))
+		} else {
+			secondStr += string(second[i])
+		}
+	}
+
+	fmt.Print(string(first), "\t")
+	fmt.Print(secondStr)
 }
